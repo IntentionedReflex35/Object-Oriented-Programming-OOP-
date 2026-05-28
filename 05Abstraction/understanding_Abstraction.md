@@ -84,11 +84,11 @@ See `PaymentSystem.py` for proper code.
 
 ### So how is Abstraction different from Encapsulation?
 
-| 🔒Encapsulation | 🫙Abstraction                      |
-|-----------------|------------------------------------|
-| What it hides   | Internal data (like `__balance`)   |Internal complexity (like how pay() works behind the scenes)|
-| Why it hides    | To protect data from being misused |To simplify what the outside world needs to think about|
-| Analogy         | Bank vault — hide the money 💰     | ATM interface — hide the banking system 🏧|
+|               |          🔒Encapsulation           |                        Abstraction🫙                         |
+|---------------|:----------------------------------:|:------------------------------------------------------------:|
+| What it hides |  Internal data (like `__balance`)  | Internal complexity (like how pay() works behind the scenes) |
+| Why it hides  | To protect data from being misused |   To simplify what the outside world needs to think about    |
+| Analogy       |   Bank vault — hide the money 💰   |          ATM interface — hide the banking system 🏧          |
 
 
 > Encapsulation: "You can't touch this data directly."
