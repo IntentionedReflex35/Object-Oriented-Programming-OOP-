@@ -21,7 +21,7 @@ class Animal:
 # =================================================
 
 
-class Dog(Animal):             # 👈 Dog inherits Animal. Do not forget to the parent class in brackets of a child class
+class Dog(Animal):          # 👈 Dog inherits Animal. Do not forget to put the parent class in brackets of a child class
     def bark(self):
         print(f"{self.name} says: Woof!")
 
