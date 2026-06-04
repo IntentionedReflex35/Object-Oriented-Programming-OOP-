@@ -32,7 +32,6 @@ class Members(ABC):
     def borrow(self, book):       # Books borrowed will be added to the list
         self.borrowed_books.append(book)
 
-    @abstractmethod
     def return_(self, book):       # Books returned will be removed from the list
         self.borrowed_books.remove(book)
         print(f"This book {book} has been returned.")
@@ -53,9 +52,6 @@ class RegularMember(Members):
             print(self.borrowed_books[:-1])
         assert len(self.borrowed_books) <= max_books, f"Books borrowed should at most be {max_books}"
 
-    def return_(self, book):
-        super().return_(book)
-
     def get_member_info(self):
         print(f"Name: {self.name}\nMember_id: {self.member_id}\nNumber of borrowed books: "
               f"{super().get_member_info()[0]}\n"
@@ -71,9 +67,6 @@ class PremiumMember(Members):
             print(self.borrowed_books[:-1])
         assert len(self.borrowed_books) <= max_books, f"Books borrowed should at most be {max_books}"
 
-    def return_(self, book):
-        pass
-
     def get_member_info(self):
         print(f"Name: {self.name}\nMember_id: {self.member_id}\nNumber of borrowed books: "
               f"{super().get_member_info()[0]}\n"
@@ -81,7 +74,20 @@ class PremiumMember(Members):
 
 
 class Library:
-    pass
+    def __init__(self):
+        self.book_list = []
+        self.member_list = []
+
+    def add_book(self, book):
+        self.book_list.append(book)
+        print(f"This book {book} has been added to the shelf.")
+
+    def register_members(self, member):
+        self.member_list.append(member.capitalize())
+        print(f"Welcome, {member}, to the Library.")
+
+    def available_books(self):
+        return self.book_list
 
 
 book0 = Books('garde', "john favour", "st235", True)
@@ -100,3 +106,7 @@ member2.borrow("little")
 member2.borrow('sun')
 member2.borrow('hey there')
 member2.get_member_info()
+
+Library().add_book("late")
+print(Library().available_books())
+
