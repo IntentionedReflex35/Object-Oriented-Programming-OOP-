@@ -86,11 +86,15 @@ class Library:
         print(f"This book {book} has been added to the shelf.")
 
     def register_members(self, member):
-        self.member_list.append(member.capitalize())
+        self.member_list.append(member)
         print(f"Welcome, {member}, to the Library.")
 
     def available_books(self):
-        return self.book_list
+        available = [book.title for book in self.book_list if book._Books__is_available]
+        if available:
+            print("Available books:", available)
+        else:
+            print("No books available right now.")
 
 
 book0 = Books('garde', "john favour", "st235", True)
