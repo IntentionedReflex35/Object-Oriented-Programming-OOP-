@@ -10,6 +10,10 @@ class Books:
         self.isbn = isbn
         self.__is_available = bool(is_available)
 
+    # Getter method, a clean to get or read encapsulated attributes
+    def is_book_available(self):
+        return self.__is_available
+
     # Here, one wants to borrow a book. A book can be borrowed only if it is available.
     # self.__is_available will be set as false to make it unavailable at all times.
     def borrow_book(self):
@@ -92,7 +96,7 @@ class Library:
         print(f"Welcome, {member}, to the Library.")
 
     def available_books(self):
-        available = [book.title for book in self.book_list if book._Books__is_available]
+        available = [book.title for book in self.book_list if book.is_book_available()]
         if available:
             print("Available books:", available)
         else:
@@ -117,5 +121,4 @@ member2.borrow('hey there')
 member2.get_member_info()
 
 Library().add_book("late")
-print(Library().available_books())
-
+Library().available_books()
