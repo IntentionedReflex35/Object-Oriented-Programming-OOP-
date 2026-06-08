@@ -41,9 +41,7 @@ class Members(ABC):
 
     @abstractmethod
     def get_member_info(self):
-        number_of_books = len(self.borrowed_books)
-        member_status = ['Regular', 'Premium']
-        return number_of_books, member_status
+        pass
 
 
 class RegularMember(Members):
@@ -56,9 +54,11 @@ class RegularMember(Members):
         print(f"{book} borrowed successfully!")
 
     def get_member_info(self):
-        print(f"Name: {self.name}\nMember_id: {self.member_id}\nNumber of borrowed books: "
-              f"{super().get_member_info()[0]}\n"
-              f"Member Status: {super().get_member_info()[1][0]}")
+        print(f"Name: {self.name}\n"
+              f"Member ID: {self.member_id}\n"
+              f"Status: Regular Member\n"
+              f"Books Borrowed: "
+              f"{len(self.borrowed_books)}/{3}")
 
 
 class PremiumMember(Members):
@@ -71,9 +71,11 @@ class PremiumMember(Members):
         print(f"{book} borrowed successfully!")
 
     def get_member_info(self):
-        print(f"Name: {self.name}\nMember_id: {self.member_id}\nNumber of borrowed books: "
-              f"{super().get_member_info()[0]}\n"
-              f"Member Status: {super().get_member_info()[1][1]}")
+        print(f"Name: {self.name}\n"
+              f"Member ID: {self.member_id}\n"
+              f"Status: Premium Member\n"
+              f"Books Borrowed: "
+              f"{len(self.borrowed_books)}/{10}")
 
 
 class Library:
