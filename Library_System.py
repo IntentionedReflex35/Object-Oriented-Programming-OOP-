@@ -11,15 +11,18 @@ class Books:
         self.__is_available = bool(is_available)
 
     # Here, one wants to borrow a book. A book can be borrowed only if it is available.
+    # self.__is_available will be set as false to make it unavailable at all times.
     def borrow_book(self):
         if self.__is_available:
+            self.__is_available = False
             print(f"The book, {self.title} by {self.author} has been borrowed.")
         else:
-            print(f"Book not available.")
+            print(f"{self.title} is not available.")
 
     # One wants to return a book. A book can be returned regardless if it's available or not.
     def return_book(self):
-        print(f"The book, {self.title} by {self.author} with ISBN, {self.isbn} is returned.")
+        self.__is_available = True
+        print(f"The book, {self.title} by {self.author} with ISBN, {self.isbn} has been returned.")
 
 
 class Members(ABC):
@@ -46,11 +49,11 @@ class Members(ABC):
 class RegularMember(Members):
     def borrow(self, book):  # Can only borrow a maximum of 3 books
         max_books = 3
-        super().borrow(book)
-        if len(self.borrowed_books) > max_books:
-            print(f"Maximum number of books({max_books}) reached. Upgrade to premium to borrow more.")
-            print(self.borrowed_books[:-1])
-        assert len(self.borrowed_books) <= max_books, f"Books borrowed should at most be {max_books}"
+        if len(self.borrowed_books) >= max_books:      # Add condition to check for breach
+            print(f"Maximum number of books({max_books}) reached.")
+            return
+        super().borrow(book)                           # Add book to the list
+        print(f"{book} borrowed successfully!")
 
     def get_member_info(self):
         print(f"Name: {self.name}\nMember_id: {self.member_id}\nNumber of borrowed books: "
@@ -61,11 +64,11 @@ class RegularMember(Members):
 class PremiumMember(Members):
     def borrow(self, book):    # Can only borrow a maximum of ten books
         max_books = 10
+        if len(self.borrowed_books) >= max_books:
+            print(f"Maximum number of books({max_books}) reached.")
+            return
         super().borrow(book)
-        if len(self.borrowed_books) > max_books:
-            print(f"Maximum number of books({max_books}) reached. Upgrade to premium to borrow more.")
-            print(self.borrowed_books[:-1])
-        assert len(self.borrowed_books) <= max_books, f"Books borrowed should at most be {max_books}"
+        print(f"{book} borrowed successfully!")
 
     def get_member_info(self):
         print(f"Name: {self.name}\nMember_id: {self.member_id}\nNumber of borrowed books: "
