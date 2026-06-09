@@ -145,7 +145,6 @@ library.add_book(book8)
 library.add_book(book6)
 print("===============================================================================================================")
 # Member borrows through the library
-book1.borrow_book()    # Verifying if available or not
 member1.borrow(book1)
 member1.borrow(book2)
 member1.borrow(book3)
