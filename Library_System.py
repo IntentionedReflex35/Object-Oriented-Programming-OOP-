@@ -89,11 +89,11 @@ class Library:
 
     def add_book(self, book):
         self.book_list.append(book)
-        print(f"This book {book} has been added to the shelf.")
+        print(f"This book {book.title} by {book.author} has been added to the shelf.")
 
     def register_members(self, member):
         self.member_list.append(member)
-        print(f"Welcome, {member}, to the Library.")
+        print(f"Welcome, {member.name}, to the Library.")
 
     def available_books(self):
         available = [book.title for book in self.book_list if book.is_book_available()]
