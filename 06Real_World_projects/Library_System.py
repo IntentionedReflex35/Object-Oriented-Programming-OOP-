@@ -133,6 +133,7 @@ library.register_members(member1)
 print()
 library.register_members(member2)
 print("===============================================================================================================")
+
 # Add books to library
 library.add_book(book1)
 library.add_book(book2)
@@ -144,6 +145,7 @@ library.add_book(book7)
 library.add_book(book8)
 library.add_book(book6)
 print("===============================================================================================================")
+
 # Member borrows through the library
 member1.borrow(book1)
 member1.borrow(book2)
@@ -153,10 +155,12 @@ print()
 member2.borrow(book5)
 member2.borrow(book1)
 print("===============================================================================================================")
+
 # Member Information
 member1.get_member_info()
 print()
 member2.get_member_info()
 print("===============================================================================================================")
+
 # Check available books
 library.available_books()
