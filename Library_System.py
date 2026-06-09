@@ -5,8 +5,8 @@ from abc import ABC, abstractmethod
 
 class Books:
     def __init__(self, title, author, isbn, is_available):
-        self.title = title.capitalize()
-        self.author = author.capitalize()
+        self.title = title
+        self.author = author
         self.isbn = isbn
         self.__is_available = bool(is_available)
 
@@ -31,7 +31,7 @@ class Books:
 
 class Members(ABC):
     def __init__(self, name, member_id):
-        self.name = name.capitalize()
+        self.name = name
         self.member_id = member_id
         self.borrowed_books = []
 
@@ -103,22 +103,53 @@ class Library:
             print("No books available right now.")
 
 
-book0 = Books('garde', "john favour", "st235", True)
-book0.borrow_book()
+# Create Book objects
+book1 = Books("Legend Of The Seeker", "Terry Goodkind", "LB001", True)
+book2 = Books("Marvel", "Stan Lee", "MV002", True)
+book3 = Books("America", "Jon Meachem", "AM003", True)
+book4 = Books("Daredevil", "Stan Lee", "MV003", True)
+book5 = Books("Hulk", "Stan Lee", "MV004", True)
+book6 = Books("Captain America", "Stan Lee", "MV005", True)
+book7 = Books("Iron Man", "Stan Lee", "MV006", True)
+book8 = Books("Black Panther", "Stan Lee", "MV007", True)
 
+# Create one Library
+library = Library()
+
+# Create member objects
 member1 = RegularMember("Ivan", "st.235")
-member1.borrow("Legend Of The Seeker")
-member1.borrow("Marvel")
-member1.borrow("America")
-member1.return_("Legend Of The Seeker")
-# member1.borrow("War")
-member1.get_member_info()
-print('=====================================================')
-member2 = PremiumMember("Arthur", "st.236")
-member2.borrow("little")
-member2.borrow('sun')
-member2.borrow('hey there')
-member2.get_member_info()
+member2 = PremiumMember("Jayden", "st.356")
 
-Library().add_book("late")
-Library().available_books()
+# Register members
+library.register_members(member1)
+print()
+library.register_members(member2)
+print("===============================================================================================================")
+# Add books to library
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
+library.add_book(book4)
+library.add_book(book5)
+library.add_book(book6)
+library.add_book(book7)
+library.add_book(book8)
+library.add_book(book6)
+print("===============================================================================================================")
+# Member borrows through the library
+book1.borrow_book()    # Verifying if available or not
+member1.borrow(book1.title)
+member1.borrow(book2.title)
+member1.borrow(book3.title)
+member1.borrow(book4.title)
+print()
+member2.borrow(book5.title)
+member2.borrow(book1.title)
+print("===============================================================================================================")
+# Member Information
+member1.get_member_info()
+print()
+member2.get_member_info()
+print("===============================================================================================================")
+# Check available books
+library.available_books()
