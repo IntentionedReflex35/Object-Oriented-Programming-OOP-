@@ -49,13 +49,17 @@ class Members(ABC):
 
 
 class RegularMember(Members):
-    def borrow(self, book):  # Can only borrow a maximum of 3 books
+    def borrow(self, book):         # book = actual Books object
+        if not book.is_book_available():
+            print(f"{book.title} is not available!")
+            return
         max_books = 3
-        if len(self.borrowed_books) >= max_books:      # Add condition to check for breach
+        if len(self.borrowed_books) >= max_books:
             print(f"Maximum number of books({max_books}) reached.")
             return
-        super().borrow(book)                           # Add book to the list
-        print(f"{book} borrowed successfully!")
+        book.borrow_book()           # marks it unavailable
+        super().borrow(book.title)   # adds title to list
+        print(f"{book.title} borrowed successfully!")
 
     def get_member_info(self):
         print(f"Name: {self.name}\n"
@@ -66,13 +70,17 @@ class RegularMember(Members):
 
 
 class PremiumMember(Members):
-    def borrow(self, book):    # Can only borrow a maximum of ten books
+    def borrow(self, book):
+        if not book.is_book_available():
+            print(f"{book.title} is not available!")
+            return
         max_books = 10
         if len(self.borrowed_books) >= max_books:
             print(f"Maximum number of books({max_books}) reached.")
             return
-        super().borrow(book)
-        print(f"{book} borrowed successfully!")
+        book.borrow_book()
+        super().borrow(book.title)
+        print(f"{book.title} borrowed successfully!")
 
     def get_member_info(self):
         print(f"Name: {self.name}\n"
@@ -138,13 +146,13 @@ library.add_book(book6)
 print("===============================================================================================================")
 # Member borrows through the library
 book1.borrow_book()    # Verifying if available or not
-member1.borrow(book1.title)
-member1.borrow(book2.title)
-member1.borrow(book3.title)
-member1.borrow(book4.title)
+member1.borrow(book1)
+member1.borrow(book2)
+member1.borrow(book3)
+member1.borrow(book4)
 print()
-member2.borrow(book5.title)
-member2.borrow(book1.title)
+member2.borrow(book5)
+member2.borrow(book1)
 print("===============================================================================================================")
 # Member Information
 member1.get_member_info()
