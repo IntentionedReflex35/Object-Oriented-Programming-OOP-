@@ -168,12 +168,10 @@ keywords = ["enforce", "contract", "abstract", "hide", "complex", "ABC", "must",
 
 
 def check_answer(user_answer, keywords):
+    """Check if user answer contains enough keyword hits."""
     answer_lower = user_answer.lower()
-    hits = 0
-    for kw in keywords:
-        if kw.lower() in answer_lower:
-            hits += 1
-    return hits
+    hits = sum(1 for kw in keywords if kw.lower() in answer_lower)
+    return hits >= 2          # at least 2 keyword concepts touched
 
 
 print(check_answer(user_answer, keywords))
