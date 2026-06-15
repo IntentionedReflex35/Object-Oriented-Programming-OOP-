@@ -1,7 +1,7 @@
 # 🧠 Object-Oriented Programming (OOP) in Python — First Principles
 
 Welcome to my Object-Oriented Programming repository!
-> *A personal learning journal and code repository tracing one beginner's journey into Object-Oriented Programming through first-principles thinking.*
+> *A personal learning journal and code repository tracing my journey into Object-Oriented Programming through first-principles thinking.*
 
 ---
 
