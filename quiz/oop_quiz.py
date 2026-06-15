@@ -175,3 +175,10 @@ def check_answer(user_answer, keywords):
 
 
 print(check_answer(user_answer, keywords))
+
+
+def divider():
+    print(f"\n{CYAN}{'─' * 62}{RESET}\n")
+
+
+divider()
