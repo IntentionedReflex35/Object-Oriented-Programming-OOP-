@@ -147,24 +147,13 @@ questions = [
 
 
 # ------------ FUNCTIONS FOR THE QUIZ ----------------------------
-#     ---------   BACKEND(HELPERS)  --------
+#     -----------     HELPERS     -----------
 def slow_print(text, delay=0.015):
     """Print text character by character for a typewriter effect."""
     for char in text:
         print(char, end="", flush=True)
         time.sleep(delay)
     print()
-
-
-for num, question in enumerate(questions[0:]):
-    print(f"Question {num + 1}:")
-    slow_print(question['question'])
-    print('\n' + '-' * 50 + '\n')
-
-# Creating a check answer function
-user_answer = (" This is a contract between the stakeholders. It is a very abstract and complex situation."
-               "This is not as easy as abc.")
-keywords = ["enforce", "contract", "abstract", "hide", "complex", "ABC", "must", "interface"]
 
 
 def check_answer(user_answer, keywords):
@@ -174,18 +163,11 @@ def check_answer(user_answer, keywords):
     return hits >= 2          # at least 2 keyword concepts touched
 
 
-print(check_answer(user_answer, keywords))
-
-
 def divider():
     print(f"\n{CYAN}{'─' * 62}{RESET}\n")
-
-
-divider()
 
 
 def press_enter(prompt="  Press ENTER to continue..."):
     input(f"\n{YELLOW}{prompt}{RESET}")
 
 
-press_enter()
