@@ -159,16 +159,21 @@ def slow_print(text, delay=0.015):
 for num, question in enumerate(questions[0:]):
     print(f"Question {num + 1}:")
     slow_print(question['question'])
-    print('\n' + '-'*50 + '\n')
-
+    print('\n' + '-' * 50 + '\n')
 
 # Creating a check answer function
-# This is to test the logic
-hits = 0
-user_answer = input(" > ")
-answer_lower = user_answer.lower()
+user_answer = (" This is a contract between the stakeholders. It is a very abstract and complex situation."
+               "This is not as easy as abc.")
 keywords = ["enforce", "contract", "abstract", "hide", "complex", "ABC", "must", "interface"]
-for kw in keywords:
-    if kw.lower() in answer_lower:
-        hits += 1
-print('concepts touched' if hits >= 2 else 'escape')
+
+
+def check_answer(user_answer, keywords):
+    answer_lower = user_answer.lower()
+    hits = 0
+    for kw in keywords:
+        if kw.lower() in answer_lower:
+            hits += 1
+    return hits
+
+
+print(check_answer(user_answer, keywords))
