@@ -145,3 +145,18 @@ questions = [
     },
 ]
 
+
+# ------------ FUNCTIONS FOR THE QUIZ ----------------------------
+#     ---------   BACKEND(HELPERS)  --------
+def slow_print(text, delay=0.015):
+    """Print text character by character for a typewriter effect."""
+    for char in text:
+        print(char, end="", flush=True)
+        time.sleep(delay)
+    print()
+
+
+for num, question in enumerate(questions[0:]):
+    print(num)
+    print(slow_print(question['question']))
+
