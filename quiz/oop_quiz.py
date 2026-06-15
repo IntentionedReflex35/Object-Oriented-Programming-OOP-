@@ -182,3 +182,10 @@ def divider():
 
 
 divider()
+
+
+def press_enter(prompt="  Press ENTER to continue..."):
+    input(f"\n{YELLOW}{prompt}{RESET}")
+
+
+press_enter()
