@@ -177,3 +177,10 @@ slow_print(f"{BOLD}{CYAN}  ║         OOP IN PYTHON — INTERACTIVE QUIZ       
 slow_print(f"{BOLD}{CYAN}  ║         All 4 Pillars · 10 Questions                 ║{RESET}")
 slow_print(f"{BOLD}{CYAN}  ╚══════════════════════════════════════════════════════╝{RESET}")
 
+print()
+print(f"  How it works:\n")
+print(f"  {YELLOW}①{RESET}  Read the question carefully")
+print(f"  {YELLOW}②{RESET}  Type your answer in your own words and hit ENTER")
+print(f"  {YELLOW}③{RESET}  See instant feedback — then the model answer reveals")
+print(f"  {YELLOW}④{RESET}  Rate yourself honestly before moving on\n")
+press_enter("  Ready? Press ENTER to start the quiz...")
