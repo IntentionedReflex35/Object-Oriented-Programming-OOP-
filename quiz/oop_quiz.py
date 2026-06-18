@@ -190,14 +190,12 @@ def show_welcome():
 show_welcome()
 
 
-# show questions
-def show_question():
+def show_question(q, index, total):
     divider()
-    index = 1
-    total = 10
     print(f"  {BOLD}Question {index} of {total}{RESET}")
     print()
-    slow_print(f"  {BOLD}{questions[0]['question']}{RESET}", delay=0.02)
+    slow_print(f"  {BOLD}{q['question']}{RESET}", delay=0.02)
 
 
-show_question()
+show_question(questions[0], 1, 10)
+show_question(questions[1], 2, 10)
