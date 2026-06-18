@@ -187,9 +187,6 @@ def show_welcome():
     press_enter("  Ready? Press ENTER to start the quiz...")
 
 
-show_welcome()
-
-
 def show_question(q, index, total):
     divider()
     print(f"  {BOLD}Question {index} of {total}{RESET}")
@@ -197,5 +194,6 @@ def show_question(q, index, total):
     slow_print(f"  {BOLD}{q['question']}{RESET}", delay=0.02)
 
 
+show_welcome()
 show_question(questions[0], 1, 10)
 show_question(questions[1], 2, 10)
