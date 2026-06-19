@@ -264,7 +264,11 @@ def self_rate():
 # This should come after all questions have been answered
 divider()
 scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]    # Imagine that these are the self ratings from each of the 10 questions
-print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")  # Counting each scores
+# Counting each scores
+perfect = scores.count(1)
+partial = scores.count(2)
+poor = scores.count(3)
+# print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")
 # create visual banner for quiz completion
 slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
 slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
@@ -273,7 +277,7 @@ slow_print(f"  {BOLD}{CYAN}╚════════════════�
 # Scores over total
 total = 10
 print()
-print(f"  {GREEN}✔  Nailed it:       {scores.count(1)}/{total}{RESET}")
-print(f"  {YELLOW}△  Partial:         {scores.count(2)}/{total}{RESET}")
-print(f"  {RED}✘  Needs review:    {scores.count(3)}/{total}{RESET}")
+print(f"  {GREEN}✔  Nailed it:      {perfect}/{total}{RESET}")
+print(f"  {YELLOW}△  Partial:        {partial}/{total}{RESET}")
+print(f"  {RED}✘  Needs review:   {poor}/{total}{RESET}")
 print()
