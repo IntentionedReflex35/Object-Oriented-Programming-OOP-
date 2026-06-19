@@ -250,3 +250,10 @@ print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
 print(f"  {GREEN}1{RESET} — Nailed it completely")
 print(f"  {YELLOW}2{RESET} — Got the idea, missed some details")
 print(f"  {RED}3{RESET} — Needs more review")
+
+while True:
+    rating = input(" > ").strip()
+    if rating in ("1", "2", "3"):
+        print(int(rating))
+        break
+    print(f"  {RED}Please enter 1, 2, or 3{RESET}")
