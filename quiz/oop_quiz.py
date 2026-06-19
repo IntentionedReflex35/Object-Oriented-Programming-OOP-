@@ -289,3 +289,10 @@ elif poor <= 2:
     slow_print(f"  {BOLD}{YELLOW}Solid understanding. Review the flagged ones and you're there. 💪{RESET}")
 else:
     slow_print(f"  {BOLD}{RED}Good effort. Revisit the pillars and try again — you've got this. 🔄{RESET}")
+
+# List exactly which questions to revisit
+print()
+if poor > 0:
+    print(f"{BOLD}Questions to revisit:{RESET}")
+    for i, s in enumerate(scores):
+        print(f'Question {i} : Score({s})')
