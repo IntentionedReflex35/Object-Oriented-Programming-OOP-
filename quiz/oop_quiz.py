@@ -269,3 +269,11 @@ print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")  # Counting ea
 slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
 slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
 slow_print(f"  {BOLD}{CYAN}╚══════════════════════════════════════╝{RESET}")
+
+# Scores over total
+total = 10
+print()
+print(f"  {GREEN}✔  Nailed it:       {scores.count(1)}/{total}{RESET}")
+print(f"  {YELLOW}△  Partial:         {scores.count(2)}/{total}{RESET}")
+print(f"  {RED}✘  Needs review:    {scores.count(3)}/{total}{RESET}")
+print()
