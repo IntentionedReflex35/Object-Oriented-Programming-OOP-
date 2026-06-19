@@ -232,20 +232,6 @@ def show_feedback(user_answer, q):
     return passed
 
 
-# show_welcome()
-#
-# show_question(questions[0], 1, 10)
-# user_answer0 = get_user_answer()
-# q0 = questions[0]
-# show_feedback(user_answer0, q0)
-#
-# show_question(questions[1], 2, 10)
-# get_user_answer()
-# user_answer1 = get_user_answer()
-# q1 = questions[1]
-# show_feedback(user_answer1, q1)
-
-
 # Self rate
 def self_rate():
     print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
@@ -258,3 +244,18 @@ def self_rate():
         if rating in ("1", "2", "3"):
             return int(rating)
         print(f"  {RED}Please enter 1, 2, or 3{RESET}")
+
+
+show_welcome()
+
+show_question(questions[0], 1, 10)
+user_answer0 = get_user_answer()
+q0 = questions[0]
+show_feedback(user_answer0, q0)
+self_rate()
+
+show_question(questions[1], 2, 10)
+user_answer1 = get_user_answer()
+q1 = questions[1]
+show_feedback(user_answer1, q1)
+self_rate()
