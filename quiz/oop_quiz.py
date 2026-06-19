@@ -194,7 +194,6 @@ def show_question(q, index, total):
     slow_print(f"  {BOLD}{q['question']}{RESET}", delay=0.02)
 
 
-# getting user answer
 def get_user_answer():
     lines = []
     print(f"  {YELLOW}Your answer:{RESET}")
@@ -213,3 +212,13 @@ show_question(questions[0], 1, 10)
 get_user_answer()
 show_question(questions[1], 2, 10)
 get_user_answer()
+
+
+# show feedback after user answer to verify with model answer
+user_answer = get_user_answer()
+q = questions[2]
+passed = check_answer(user_answer, q["keywords"])
+if passed:
+    slow_print(f"  {GREEN}{BOLD}✔  Good answer! You hit the key concepts.{RESET}")
+else:
+    slow_print(f"  {YELLOW}{BOLD}△  Partially there — check the model answer below.{RESET}")
