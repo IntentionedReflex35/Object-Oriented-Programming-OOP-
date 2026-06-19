@@ -200,18 +200,19 @@ show_question(questions[1], 2, 10)
 
 
 # getting user answer
-lines = []
-print(f"  {YELLOW}Your answer:{RESET}")
-print(f"  {CYAN}(Type your answer. Press ENTER twice when done){RESET}\n")
-while True:
-    line = input(" > ")
-    if line == "" and lines:
-        break
-    if line != "":
-        lines.append(line)
-' '.join(lines)
+def get_user_answer():
+    lines = []
+    print(f"  {YELLOW}Your answer:{RESET}")
+    print(f"  {CYAN}(Type your answer. Press ENTER twice when done){RESET}\n")
+    while True:
+        line = input(" > ")
+        if line == "" and lines:
+            break
+        if line != "":
+            lines.append(line)
+    return ' '.join(lines)
+    # print(lines)
 # line1 = input(" > ")
 # line2 = input(" > ")
 # lines.append(line1)
 # lines.append(line2)
-print(lines)
