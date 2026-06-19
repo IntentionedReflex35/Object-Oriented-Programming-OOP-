@@ -234,6 +234,6 @@ print()
 
 # Word wrapping for model answer
 wrapped_text = textwrap.fill(q['model_answer'], width=70)
-print(wrapped_text)
-for text in wrapped_text:
-    slow_print(f" {text}", delay=0.03)
+lines = wrapped_text.split('\n')
+for line in lines:
+    slow_print(f" {line}", delay=0.03)
