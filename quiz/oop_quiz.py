@@ -265,3 +265,7 @@ def self_rate():
 divider()
 scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]    # Imagine that these are the self ratings from each of the 10 questions
 print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")  # Counting each scores
+# create visual banner for quiz completion
+slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
+slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
+slow_print(f"  {BOLD}{CYAN}╚══════════════════════════════════════╝{RESET}")
