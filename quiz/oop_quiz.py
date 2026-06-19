@@ -246,20 +246,6 @@ def self_rate():
         print(f"  {RED}Please enter 1, 2, or 3{RESET}")
 
 
-# show_welcome()
-#
-# show_question(questions[0], 1, 10)
-# user_answer0 = get_user_answer()
-# q0 = questions[0]
-# show_feedback(user_answer0, q0)
-# self_rate()
-#
-# show_question(questions[1], 2, 10)
-# user_answer1 = get_user_answer()
-# q1 = questions[1]
-# show_feedback(user_answer1, q1)
-# self_rate()
-
 # show results
 # This should come after all questions have been answered
 def show_results(scores, total):
@@ -299,3 +285,22 @@ def show_results(scores, total):
             # print(f'Question {i} : Score({s})')
             if s == 3:   # condition to reveal questions with scores of 3
                 print(f"  {RED}  → Question {i}{RESET}")
+
+
+show_welcome()
+
+show_question(questions[0], 1, 10)
+user_answer0 = get_user_answer()
+q0 = questions[0]
+show_feedback(user_answer0, q0)
+self_rate()
+
+show_question(questions[1], 2, 10)
+user_answer1 = get_user_answer()
+q1 = questions[1]
+show_feedback(user_answer1, q1)
+self_rate()
+
+scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
+total = 10
+show_results(scores, total)
