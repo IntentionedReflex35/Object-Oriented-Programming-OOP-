@@ -194,11 +194,6 @@ def show_question(q, index, total):
     slow_print(f"  {BOLD}{q['question']}{RESET}", delay=0.02)
 
 
-show_welcome()
-show_question(questions[0], 1, 10)
-show_question(questions[1], 2, 10)
-
-
 # getting user answer
 def get_user_answer():
     lines = []
@@ -211,8 +206,10 @@ def get_user_answer():
         if line != "":
             lines.append(line)
     return ' '.join(lines)
-    # print(lines)
-# line1 = input(" > ")
-# line2 = input(" > ")
-# lines.append(line1)
-# lines.append(line2)
+
+
+show_welcome()
+show_question(questions[0], 1, 10)
+get_user_answer()
+show_question(questions[1], 2, 10)
+get_user_answer()
