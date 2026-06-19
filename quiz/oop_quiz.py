@@ -215,6 +215,7 @@ get_user_answer()
 
 
 # show feedback after user answer to verify with model answer
+show_question(questions[2], 3, 10)
 user_answer = get_user_answer()
 q = questions[2]
 passed = check_answer(user_answer, q["keywords"])
