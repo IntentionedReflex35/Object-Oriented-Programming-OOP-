@@ -208,19 +208,6 @@ def get_user_answer():
     return ' '.join(lines)
 
 
-show_welcome()
-show_question(questions[0], 1, 10)
-get_user_answer()
-show_question(questions[1], 2, 10)
-get_user_answer()
-
-
-# show feedback after user answer to verify with model answer
-show_question(questions[2], 3, 10)
-user_answer = get_user_answer()
-q = questions[2]
-
-
 def show_feedback(user_answer, q):
     passed = check_answer(user_answer, q["keywords"])
     if passed:
@@ -239,10 +226,21 @@ def show_feedback(user_answer, q):
     wrapped_text = textwrap.wrap(q['model_answer'], width=70)
     # lines = wrapped_text.split('\n')
     for line in wrapped_text:
-        slow_print(f" {line}", delay=0.03)
+        slow_print(f" {line}", delay=0.035)
 
     print()
     return passed
 
 
-show_feedback(user_answer=user_answer, q=q)
+show_welcome()
+
+show_question(questions[0], 1, 10)
+user_answer0 = get_user_answer()
+q0 = questions[0]
+show_feedback(user_answer0, q0)
+
+show_question(questions[1], 2, 10)
+get_user_answer()
+user_answer1 = get_user_answer()
+q1 = questions[1]
+show_feedback(user_answer1, q1)
