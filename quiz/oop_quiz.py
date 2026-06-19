@@ -284,8 +284,8 @@ print()
 
 # setting conditions for final verdict
 if poor == 0 and partial <= 2:
-    slow_print('perfect')
+    slow_print(f"  {BOLD}{GREEN}Outstanding! OOP is clearly locked in. 🏆{RESET}")
 elif poor <= 2:
-    slow_print('well done. could have done better.')
+    slow_print(f"  {BOLD}{YELLOW}Solid understanding. Review the flagged ones and you're there. 💪{RESET}")
 else:
-    slow_print('you need revision.')
+    slow_print(f"  {BOLD}{RED}Good effort. Revisit the pillars and try again — you've got this. 🔄{RESET}")
