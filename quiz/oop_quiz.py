@@ -245,15 +245,16 @@ def show_feedback(user_answer, q):
 # q1 = questions[1]
 # show_feedback(user_answer1, q1)
 
-# Self rate
-print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
-print(f"  {GREEN}1{RESET} — Nailed it completely")
-print(f"  {YELLOW}2{RESET} — Got the idea, missed some details")
-print(f"  {RED}3{RESET} — Needs more review")
 
-while True:
-    rating = input(" > ").strip()
-    if rating in ("1", "2", "3"):
-        print(int(rating))
-        break
-    print(f"  {RED}Please enter 1, 2, or 3{RESET}")
+# Self rate
+def self_rate():
+    print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
+    print(f"  {GREEN}1{RESET} — Nailed it completely")
+    print(f"  {YELLOW}2{RESET} — Got the idea, missed some details")
+    print(f"  {RED}3{RESET} — Needs more review")
+
+    while True:
+        rating = input(" > ").strip()
+        if rating in ("1", "2", "3"):
+            return int(rating)
+        print(f"  {RED}Please enter 1, 2, or 3{RESET}")
