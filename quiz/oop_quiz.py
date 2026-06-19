@@ -222,4 +222,6 @@ passed = check_answer(user_answer, q["keywords"])
 if passed:
     slow_print(f"  {GREEN}{BOLD}✔  Good answer! You hit the key concepts.{RESET}")
 else:
-    slow_print(f"  {YELLOW}{BOLD}△  Partially there — check the model answer below.{RESET}")
+    slow_print(f"  {YELLOW}{BOLD}⚠  Partially there — check the model answer below.{RESET}")
+# reveal model answer
+press_enter("  Press ENTER to reveal the model answer...")
