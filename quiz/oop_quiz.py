@@ -225,3 +225,7 @@ else:
     slow_print(f"  {YELLOW}{BOLD}⚠  Partially there — check the model answer below.{RESET}")
 # reveal model answer
 press_enter("  Press ENTER to reveal the model answer...")
+
+print()
+slow_print(f"  {BOLD}Model Answer:{RESET}", delay=0.02)
+print()
