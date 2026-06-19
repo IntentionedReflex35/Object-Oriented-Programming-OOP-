@@ -4,6 +4,7 @@
 # -------------------------------------------------------
 
 import time
+import textwrap
 
 # Colours for the terminal aesthetics
 RED = "\033[91m"
@@ -229,4 +230,8 @@ press_enter("  Press ENTER to reveal the model answer...")
 print()
 slow_print(f"  {BOLD}Model Answer:{RESET}", delay=0.02)
 print()
-print(q['model_answer'])
+# print(q['model_answer'])
+
+# Word wrapping for model answer
+wrapped_text = textwrap.fill(q['model_answer'], width=70)
+print(wrapped_text)
