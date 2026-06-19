@@ -262,39 +262,40 @@ def self_rate():
 
 # show results
 # This should come after all questions have been answered
-divider()
-scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]    # Imagine that these are the self ratings from each of the 10 questions
-# Counting each scores
-perfect = scores.count(1)
-partial = scores.count(2)
-poor = scores.count(3)
-# print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")
-# create visual banner for quiz completion
-slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
-slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
-slow_print(f"  {BOLD}{CYAN}╚══════════════════════════════════════╝{RESET}")
+def show_results(scores, total):
+    divider()
+    # scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]    # Imagine that these are the self ratings from each of the 10 questions
+    # Counting each scores
+    perfect = scores.count(1)
+    partial = scores.count(2)
+    poor = scores.count(3)
+    # print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")
+    # create visual banner for quiz completion
+    slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
+    slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
+    slow_print(f"  {BOLD}{CYAN}╚══════════════════════════════════════╝{RESET}")
 
-# Scores over total
-total = 10
-print()
-print(f"  {GREEN}✔  Nailed it:      {perfect}/{total}{RESET}")
-print(f"  {YELLOW}△  Partial:        {partial}/{total}{RESET}")
-print(f"  {RED}✘  Needs review:   {poor}/{total}{RESET}")
-print()
+    # Scores over total
+    # total = 10
+    print()
+    print(f"  {GREEN}✔  Nailed it:      {perfect}/{total}{RESET}")
+    print(f"  {YELLOW}△  Partial:        {partial}/{total}{RESET}")
+    print(f"  {RED}✘  Needs review:   {poor}/{total}{RESET}")
+    print()
 
-# setting conditions for final verdict
-if poor == 0 and partial <= 2:
-    slow_print(f"  {BOLD}{GREEN}Outstanding! OOP is clearly locked in. 🏆{RESET}")
-elif poor <= 2:
-    slow_print(f"  {BOLD}{YELLOW}Solid understanding. Review the flagged ones and you're there. 💪{RESET}")
-else:
-    slow_print(f"  {BOLD}{RED}Good effort. Revisit the pillars and try again — you've got this. 🔄{RESET}")
+    # setting conditions for final verdict
+    if poor == 0 and partial <= 2:
+        slow_print(f"  {BOLD}{GREEN}Outstanding! OOP is clearly locked in. 🏆{RESET}")
+    elif poor <= 2:
+        slow_print(f"  {BOLD}{YELLOW}Solid understanding. Review the flagged ones and you're there. 💪{RESET}")
+    else:
+        slow_print(f"  {BOLD}{RED}Good effort. Revisit the pillars and try again — you've got this. 🔄{RESET}")
 
-# List exactly which questions to revisit
-print()
-if poor > 0:
-    print(f"{BOLD}Questions to revisit:{RESET}")
-    for i, s in enumerate(scores, start=1):
-        # print(f'Question {i} : Score({s})')
-        if s == 3:   # condition to reveal questions with scores of 3
-            print(f"  {RED}  → Question {i}{RESET}")
+    # List exactly which questions to revisit
+    print()
+    if poor > 0:
+        print(f"{BOLD}Questions to revisit:{RESET}")
+        for i, s in enumerate(scores, start=1):
+            # print(f'Question {i} : Score({s})')
+            if s == 3:   # condition to reveal questions with scores of 3
+                print(f"  {RED}  → Question {i}{RESET}")
