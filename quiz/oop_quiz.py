@@ -233,7 +233,7 @@ print()
 # print(q['model_answer'])
 
 # Word wrapping for model answer
-wrapped_text = textwrap.fill(q['model_answer'], width=70)
-lines = wrapped_text.split('\n')
-for line in lines:
+wrapped_text = textwrap.wrap(q['model_answer'], width=70)
+# lines = wrapped_text.split('\n')
+for line in wrapped_text:
     slow_print(f" {line}", delay=0.03)
