@@ -281,3 +281,11 @@ print(f"  {GREEN}✔  Nailed it:      {perfect}/{total}{RESET}")
 print(f"  {YELLOW}△  Partial:        {partial}/{total}{RESET}")
 print(f"  {RED}✘  Needs review:   {poor}/{total}{RESET}")
 print()
+
+# setting conditions for final verdict
+if poor == 0 and partial <= 2:
+    slow_print('perfect')
+elif poor <= 2:
+    slow_print('well done. could have done better.')
+else:
+    slow_print('you need revision.')
