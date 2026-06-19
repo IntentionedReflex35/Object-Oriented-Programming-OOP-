@@ -219,21 +219,30 @@ get_user_answer()
 show_question(questions[2], 3, 10)
 user_answer = get_user_answer()
 q = questions[2]
-passed = check_answer(user_answer, q["keywords"])
-if passed:
-    slow_print(f"  {GREEN}{BOLD}✔  Good answer! You hit the key concepts.{RESET}")
-else:
-    slow_print(f"  {YELLOW}{BOLD}⚠  Partially there — check the model answer below.{RESET}")
-# reveal model answer
-press_enter("  Press ENTER to reveal the model answer...")
 
-print()
-slow_print(f"  {BOLD}Model Answer:{RESET}", delay=0.02)
-print()
-# print(q['model_answer'])
 
-# Word wrapping for model answer
-wrapped_text = textwrap.wrap(q['model_answer'], width=70)
-# lines = wrapped_text.split('\n')
-for line in wrapped_text:
-    slow_print(f" {line}", delay=0.03)
+def show_feedback(user_answer, q):
+    passed = check_answer(user_answer, q["keywords"])
+    if passed:
+        slow_print(f"  {GREEN}{BOLD}✔  Good answer! You hit the key concepts.{RESET}")
+    else:
+        slow_print(f"  {YELLOW}{BOLD}⚠  Partially there — check the model answer below.{RESET}")
+    # reveal model answer
+    press_enter("  Press ENTER to reveal the model answer...")
+
+    print()
+    slow_print(f"  {BOLD}Model Answer:{RESET}", delay=0.02)
+    print()
+    # print(q['model_answer'])
+
+    # Word wrapping for model answer
+    wrapped_text = textwrap.wrap(q['model_answer'], width=70)
+    # lines = wrapped_text.split('\n')
+    for line in wrapped_text:
+        slow_print(f" {line}", delay=0.03)
+
+    print()
+    return passed
+
+
+show_feedback(user_answer=user_answer, q=q)
