@@ -200,6 +200,12 @@ show_question(questions[1], 2, 10)
 
 
 # getting user answer
+lines = []
 print(f"  {YELLOW}Your answer:{RESET}")
 print(f"  {CYAN}(Type your answer. Press ENTER twice when done){RESET}\n")
-line = input(" > ")
+line1 = input(" > ")
+line2 = input(" > ")
+lines.append(line1)
+lines.append(line2)
+' '.join(lines)
+print(lines)
