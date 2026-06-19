@@ -295,4 +295,6 @@ print()
 if poor > 0:
     print(f"{BOLD}Questions to revisit:{RESET}")
     for i, s in enumerate(scores, start=1):
-        print(f'Question {i} : Score({s})')
+        # print(f'Question {i} : Score({s})')
+        if s == 3:   # condition to reveal questions with scores of 3
+            print(f"  {RED}  → Question {i}{RESET}")
