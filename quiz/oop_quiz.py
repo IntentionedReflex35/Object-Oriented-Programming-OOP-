@@ -294,5 +294,5 @@ else:
 print()
 if poor > 0:
     print(f"{BOLD}Questions to revisit:{RESET}")
-    for i, s in enumerate(scores):
+    for i, s in enumerate(scores, start=1):
         print(f'Question {i} : Score({s})')
