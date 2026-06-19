@@ -232,15 +232,21 @@ def show_feedback(user_answer, q):
     return passed
 
 
-show_welcome()
+# show_welcome()
+#
+# show_question(questions[0], 1, 10)
+# user_answer0 = get_user_answer()
+# q0 = questions[0]
+# show_feedback(user_answer0, q0)
+#
+# show_question(questions[1], 2, 10)
+# get_user_answer()
+# user_answer1 = get_user_answer()
+# q1 = questions[1]
+# show_feedback(user_answer1, q1)
 
-show_question(questions[0], 1, 10)
-user_answer0 = get_user_answer()
-q0 = questions[0]
-show_feedback(user_answer0, q0)
-
-show_question(questions[1], 2, 10)
-get_user_answer()
-user_answer1 = get_user_answer()
-q1 = questions[1]
-show_feedback(user_answer1, q1)
+# Self rate
+print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
+print(f"  {GREEN}1{RESET} — Nailed it completely")
+print(f"  {YELLOW}2{RESET} — Got the idea, missed some details")
+print(f"  {RED}3{RESET} — Needs more review")
