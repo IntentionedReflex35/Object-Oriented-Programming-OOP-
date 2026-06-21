@@ -290,14 +290,15 @@ def show_results(scores, total):
 # This is the final part, the main part
 def run_quiz():
     show_welcome()
-
-    show_question(questions[0], 1, 10)
+    for i, q in enumerate(questions, start=1):
+        show_question(q, i, len(questions))
+    # show_question(questions[0], 1, 10)
     user_answer0 = get_user_answer()
     q0 = questions[0]
     show_feedback(user_answer0, q0)
     self_rate()
 
-    show_question(questions[1], 2, 10)
+    # show_question(questions[1], 2, 10)
     user_answer1 = get_user_answer()
     q1 = questions[1]
     show_feedback(user_answer1, q1)
@@ -306,3 +307,6 @@ def run_quiz():
     scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
     total = 10
     show_results(scores, total)
+
+
+run_quiz()
