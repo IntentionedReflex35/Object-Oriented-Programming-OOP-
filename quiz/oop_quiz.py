@@ -193,6 +193,7 @@ def show_question(q, index, total):
     print(f"  {BOLD}Question {index} of {total}{RESET}")
     print()
     slow_print(f"  {BOLD}{q['question']}{RESET}", delay=0.02)
+    print()
 
 
 def get_user_answer():
@@ -312,6 +313,7 @@ def run_quiz():
     # scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
     # total = 10
     show_results(scores, len(questions))
+    input(f"  {CYAN}Press ENTER to exit.{RESET}\n")
 
 
 run_quiz()
