@@ -290,11 +290,13 @@ def show_results(scores, total):
 # This is the final part, the main part
 def run_quiz():
     show_welcome()
+    scores = []    # Ratings from each answer of question is stored here in a list
     for i, q in enumerate(questions, start=1):
         show_question(q, i, len(questions))
         user_answer = get_user_answer()
         show_feedback(user_answer, q)
-        self_rate()
+        rating = self_rate()
+        scores.append(rating)     # Each rating is appended to the scores list
     # show_question(questions[0], 1, 10)
     # user_answer0 = get_user_answer()
     # q0 = questions[0]
@@ -307,7 +309,7 @@ def run_quiz():
     # show_feedback(user_answer1, q1)
     # self_rate()
 
-    scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
+    # scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
     total = 10
     show_results(scores, total)
 
