@@ -294,17 +294,18 @@ def run_quiz():
         show_question(q, i, len(questions))
         user_answer = get_user_answer()
         show_feedback(user_answer, q)
+        self_rate()
     # show_question(questions[0], 1, 10)
     # user_answer0 = get_user_answer()
     # q0 = questions[0]
     # show_feedback(user_answer0, q0)
-    self_rate()
+    # self_rate()
 
     # show_question(questions[1], 2, 10)
     # user_answer1 = get_user_answer()
     # q1 = questions[1]
     # show_feedback(user_answer1, q1)
-    self_rate()
+    # self_rate()
 
     scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
     total = 10
