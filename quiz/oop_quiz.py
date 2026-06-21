@@ -310,8 +310,8 @@ def run_quiz():
     # self_rate()
 
     # scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
-    total = 10
-    show_results(scores, total)
+    # total = 10
+    show_results(scores, len(questions))
 
 
 run_quiz()
