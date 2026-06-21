@@ -292,6 +292,7 @@ def run_quiz():
     show_welcome()
     for i, q in enumerate(questions, start=1):
         show_question(q, i, len(questions))
+        get_user_answer()
     # show_question(questions[0], 1, 10)
     user_answer0 = get_user_answer()
     q0 = questions[0]
