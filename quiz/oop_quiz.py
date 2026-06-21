@@ -316,4 +316,5 @@ def run_quiz():
     input(f"  {CYAN}Press ENTER to exit.{RESET}\n")
 
 
-run_quiz()
+if __name__ == "__main__":
+    run_quiz()
