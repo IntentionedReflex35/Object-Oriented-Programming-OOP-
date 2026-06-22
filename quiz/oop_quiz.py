@@ -174,6 +174,7 @@ def press_enter(prompt="  Press ENTER to continue..."):
 
 # ----------------- SCREENS  ------------------------
 def show_welcome():
+    """Welcome screen"""
     slow_print(f"{BOLD}{CYAN}  ╔══════════════════════════════════════════════════════╗{RESET}")
     slow_print(f"{BOLD}{CYAN}  ║         OOP IN PYTHON — INTERACTIVE QUIZ             ║{RESET}")
     slow_print(f"{BOLD}{CYAN}  ║         All 4 Pillars · 10 Questions                 ║{RESET}")
@@ -189,6 +190,7 @@ def show_welcome():
 
 
 def show_question(q, index, total):
+    """Show questions with index"""
     divider()
     print(f"  {BOLD}Question {index} of {total}{RESET}")
     print()
@@ -197,6 +199,7 @@ def show_question(q, index, total):
 
 
 def get_user_answer():
+    """Allow users enter their answers"""
     lines = []
     print(f"  {YELLOW}Your answer:{RESET}")
     print(f"  {CYAN}(Type your answer. Press ENTER twice when done){RESET}\n")
@@ -210,6 +213,7 @@ def get_user_answer():
 
 
 def show_feedback(user_answer, q):
+    """Show keyword-based feedback then reveal model answer."""
     passed = check_answer(user_answer, q["keywords"])
     if passed:
         slow_print(f"  {GREEN}{BOLD}✔  Good answer! You hit the key concepts.{RESET}")
@@ -232,6 +236,7 @@ def show_feedback(user_answer, q):
 
 
 def self_rate():
+    """Ask user to honestly self-rate after seeing the model answer."""
     print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
     print(f"  {GREEN}1{RESET} — Nailed it completely")
     print(f"  {YELLOW}2{RESET} — Got the idea, missed some details")
@@ -245,6 +250,7 @@ def self_rate():
 
 
 def show_results(scores, total):
+    """Final results screen."""
     divider()
 
     # Counting each rating into three categories
@@ -282,6 +288,7 @@ def show_results(scores, total):
 
 # ----------------- MAIN ------------------------
 def run_quiz():
+    """Run the whole script"""
     show_welcome()
     scores = []    # Ratings from each answer of question is stored here in a list
 
