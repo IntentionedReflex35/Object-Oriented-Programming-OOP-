@@ -246,11 +246,13 @@ def self_rate():
 
 def show_results(scores, total):
     divider()
-    # Counting each scores
+
+    # Counting each rating into three categories
     perfect = scores.count(1)
     partial = scores.count(2)
     poor = scores.count(3)
-    # create visual banner for quiz completion
+
+    # Create visual banner for quiz completion
     slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
     slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
     slow_print(f"  {BOLD}{CYAN}╚══════════════════════════════════════╝{RESET}")
@@ -261,7 +263,7 @@ def show_results(scores, total):
     print(f"  {RED}✘  Needs review:   {poor}/{total}{RESET}")
     print()
 
-    # setting conditions for final verdict
+    # Setting conditions for final verdict
     if poor == 0 and partial <= 2:
         slow_print(f"  {BOLD}{GREEN}Outstanding! OOP is clearly locked in. 🏆{RESET}")
     elif poor <= 2:
@@ -282,6 +284,7 @@ def show_results(scores, total):
 def run_quiz():
     show_welcome()
     scores = []    # Ratings from each answer of question is stored here in a list
+
     for i, q in enumerate(questions, start=1):
         show_question(q, i, len(questions))
         user_answer = get_user_answer()
