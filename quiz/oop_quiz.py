@@ -221,11 +221,9 @@ def show_feedback(user_answer, q):
     print()
     slow_print(f"  {BOLD}Model Answer:{RESET}", delay=0.02)
     print()
-    # print(q['model_answer'])
 
-    # Word wrapping for model answer
+    # Word wrap for model answer
     wrapped_text = textwrap.wrap(q['model_answer'], width=70)
-    # lines = wrapped_text.split('\n')
     for line in wrapped_text:
         slow_print(f" {line}", delay=0.035)
 
@@ -233,7 +231,6 @@ def show_feedback(user_answer, q):
     return passed
 
 
-# Self rate
 def self_rate():
     print(f"  {YELLOW}How did you do? Rate yourself:{RESET}")
     print(f"  {GREEN}1{RESET} — Nailed it completely")
@@ -247,23 +244,17 @@ def self_rate():
         print(f"  {RED}Please enter 1, 2, or 3{RESET}")
 
 
-# show results
-# This should come after all questions have been answered
 def show_results(scores, total):
     divider()
-    # scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]    # Imagine that these are the self ratings from each of the 10 questions
     # Counting each scores
     perfect = scores.count(1)
     partial = scores.count(2)
     poor = scores.count(3)
-    # print(f"{scores.count(1)}\n{scores.count(2)}\n{scores.count(3)}")
     # create visual banner for quiz completion
     slow_print(f"\n  {BOLD}{CYAN}╔══════════════════════════════════════╗{RESET}")
     slow_print(f"  {BOLD}{CYAN}║             QUIZ COMPLETE!           ║{RESET}")
     slow_print(f"  {BOLD}{CYAN}╚══════════════════════════════════════╝{RESET}")
 
-    # Scores over total
-    # total = 10
     print()
     print(f"  {GREEN}✔  Nailed it:      {perfect}/{total}{RESET}")
     print(f"  {YELLOW}△  Partial:        {partial}/{total}{RESET}")
@@ -283,12 +274,11 @@ def show_results(scores, total):
     if poor > 0:
         print(f"{BOLD}Questions to revisit:{RESET}")
         for i, s in enumerate(scores, start=1):
-            # print(f'Question {i} : Score({s})')
             if s == 3:   # condition to reveal questions with scores of 3
                 print(f"  {RED}  → Question {i}{RESET}")
 
 
-# This is the final part, the main part
+# ----------------- MAIN ------------------------
 def run_quiz():
     show_welcome()
     scores = []    # Ratings from each answer of question is stored here in a list
@@ -298,20 +288,7 @@ def run_quiz():
         show_feedback(user_answer, q)
         rating = self_rate()
         scores.append(rating)     # Each rating is appended to the scores list
-    # show_question(questions[0], 1, 10)
-    # user_answer0 = get_user_answer()
-    # q0 = questions[0]
-    # show_feedback(user_answer0, q0)
-    # self_rate()
 
-    # show_question(questions[1], 2, 10)
-    # user_answer1 = get_user_answer()
-    # q1 = questions[1]
-    # show_feedback(user_answer1, q1)
-    # self_rate()
-
-    # scores = [1, 2, 3, 2, 1, 1, 2, 3, 3, 2]
-    # total = 10
     show_results(scores, len(questions))
     input(f"  {CYAN}Press ENTER to exit.{RESET}\n")
 
