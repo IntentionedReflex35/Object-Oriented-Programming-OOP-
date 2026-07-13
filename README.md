@@ -58,6 +58,10 @@ Object-Oriented Programming(OOP)/
 ├── notes/
 │   └── glossary.md             # OOP terms in plain language
 │
+├── quiz/
+│   ├── oop_quiz.py             # interactive quiz script
+│   └── quiz_README.md          
+│  
 ├── .gitignore
 │
 ├── LICENSE                     # MIT LICENSE
