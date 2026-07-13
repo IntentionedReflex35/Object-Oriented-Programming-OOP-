@@ -75,7 +75,7 @@ The final verdict is based on your self-ratings:
 ```
 quiz/
   oop_quiz.py     ← the quiz script
-  README.md       ← this file
+  quiz_README.md       ← this file
 ```
 
 ---
