@@ -177,8 +177,6 @@ This repository represents a personal milestone — the point where Python stopp
 **Jeshurun Nana Kojo Ansah** — Geomatic Engineering student | Aspiring Data Analyst  
 🔗 [GitHub: IntentionedReflex35](https://github.com/IntentionedReflex35)
 
-> *"Move stealthy, execute in silence."*
-
 ---
 
 <div align="center">
